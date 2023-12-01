@@ -1,0 +1,132 @@
+Slip-16 Q-1
+
+def print_elements_less_than_25(lst):
+    print("Elements less than 25:")
+    for element in lst:
+        if element < 25:
+            print(element)
+
+my_list = [10, 30, 15, 5, 40, 20, 12]
+
+print_elements_less_than_25(my_list)
+
+
+
+Slip-16 Q-2 a
+
+
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+
+    def calculate_area(self):
+        """
+        Method to calculate the area of the circle.
+        Formula: Area = π * r^2
+        """
+        area = 3.14159 * (self.radius ** 2)
+        return area
+
+    def calculate_perimeter(self):
+        """
+        Method to calculate the perimeter (circumference) of the circle.
+        Formula: Perimeter = 2 * π * r
+        """
+        perimeter = 2 * 3.14159 * self.radius
+        return perimeter
+
+radius_value = float(input("Enter the radius of the circle: "))
+my_circle = Circle(radius_value)
+
+area = my_circle.calculate_area()
+perimeter = my_circle.calculate_perimeter()
+
+print(f"Area of the circle: {area:.2f}")
+print(f"Perimeter of the circle: {perimeter:.2f}")
+
+
+
+
+
+Slip-19 Q-1
+
+
+
+def swap_first_two_chars(str1, str2):
+    
+    new_str1 = str2[:2] + str1[2:]
+    new_str2 = str1[:2] + str2[2:]
+
+    
+    result = new_str1 + new_str2
+    return result
+
+# Sample strings
+string1 = 'abc'
+string2 = 'xyz'
+
+# Get the expected output
+output = swap_first_two_chars(string1, string2)
+
+# Print the result
+print("Sample String:", f"'{string1}', '{string2}'")
+print("Expected Output:", f"'{output}'")
+
+
+Slip-19 Q-2 a
+
+def create_employee_objects(n):
+    employees = []
+    for _ in range(n):
+        name = input("Enter employee name: ")
+        address = input("Enter employee address: ")
+        staffed = input("Enter staffed information: ")
+        salary = input("Enter employee salary: ")
+
+        employee = Employee(name, address, staffed, salary)
+        employees.append(employee)
+
+    return employees
+
+def display_employee_details(employees):
+    print("\nEmployee Details:")
+    for i, employee in enumerate(employees, start=1):
+        print(f"\nEmployee {i}:")
+        print("Name:", employee.name)
+        print("Address:", employee.address)
+        print("Staffed Information:", employee.staffed)
+        print("Salary:", employee.salary)
+
+n = int(input("Enter the number of employees: "))
+
+employee_objects = create_employee_objects(n)
+
+display_employee_details(employee_objects)
+
+
+Slip-19 Q-2 b
+
+def calculate_tuple_stats(numbers):
+    max_num = min_num = sum_nums = numbers[0]
+
+    for num in numbers[1:]:
+        if num > max_num:
+            max_num = num
+        elif num < min_num:
+            min_num = num
+
+        sum_nums += num
+
+    return max_num, min_num, sum_nums
+
+n = int(input("Enter the number of elements in the tuple: "))
+
+elements = input("Enter the elements of the tuple separated by space: ")
+numbers = tuple(map(int, elements.split()))
+
+max_element, min_element, sum_elements = calculate_tuple_stats(numbers)
+
+print("Maximum Element:", max_element)
+print("Minimum Element:", min_element)
+print("Sum of Elements:", sum_elements)
+
